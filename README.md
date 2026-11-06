@@ -16,11 +16,10 @@ apk update
 
 # Скачивание и установка актуального пакета из релизов GitHub (замените URL на ваш актуальный релиз)
 cd /tmp
-wget https://github.com/VSVLAD/VShaper/releases/download/v1.0.0/luci-app-vshaper-1.0.0-r1_aarch64_cortex-a53.apk
+wget https://github.com/VSVLAD/VShaper/releases/download/1.0.0-r1/luci-app-vshaper-1.0.0-r1_aarch64_cortex-a53.apk
 apk add --allow-untrusted luci-app-vshaper-*.apk
 ```
 
----
 
 ## 2. Использование
 
@@ -40,7 +39,9 @@ apk add --allow-untrusted luci-app-vshaper-*.apk
    * Установите лимиты скорости для Download и Upload в Кбит/с (допустимые значения от 0 Кбит/с до 10 Гбит/с).
    * Сохраните и примените настройки.
 
----
+### Текущие планы по доработкам (!)
+* Получение текущего состояния настроенных правил в системе. Для этого потребуется доработка бинарника и отдача ответа в формате JSON
+* Вывести текущие правила в UI форме на вкладке "Мониторинг"
 
 ## 3. Сборка проекта
 

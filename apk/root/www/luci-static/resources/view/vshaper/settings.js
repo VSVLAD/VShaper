@@ -10,6 +10,21 @@ var callHostHints = rpc.declare({
     expect: { '': {} }
 });
 
+// Проверка на допустимое ограничение в DownLimit/UpLimit
+function validateLimit(section_id, value){
+    if (!value) return _('Значение обязательно для заполнения');
+    var num = parseInt(value, 10);
+
+    if (isNaN(num) || num <= 0) {
+        return _('Значение должно быть больше 0');
+    }
+    // 10 Гигабит = 10 * 1024 * 1024 Кбит/с = 10485760 Кбит/с
+    if (num > 10485760) {
+        return _('Максимально допустимое ограничение — 10 Гбит/с (10485760 Кбит/с)');
+    }
+    return true;
+}
+
 return view.extend({
     load: function() {
         return callHostHints();
@@ -117,11 +132,13 @@ return view.extend({
         o.datatype = 'uinteger';
         o.placeholder = '15000 (15 Мбит/с)';
         o.rmempty = false;
+        o.validate = validateLimit;
 
         o = s.option(form.Value, 'up_limit', _('Upload (Кбит/с)'));
         o.datatype = 'uinteger';
         o.placeholder = '5000 (5 Мбит/с)';
         o.rmempty = false;
+        o.validate = validateLimit;
 
         return m.render();
     }

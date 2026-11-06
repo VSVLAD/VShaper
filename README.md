@@ -16,8 +16,9 @@ apk update
 
 # Скачивание и установка актуального пакета из релизов GitHub (замените URL на ваш актуальный релиз)
 cd /tmp
-wget https://github.com/VSVLAD/VShaper/releases/download/1.0.0-r1/luci-app-vshaper-1.0.0-r1_aarch64_cortex-a53.apk
-apk add --allow-untrusted luci-app-vshaper-*.apk
+rm -f luci-app-vshaper.apk
+wget -O luci-app-vshaper.apk https://github.com/VSVLAD/VShaper/releases/download/1.0.0-r1/luci-app-vshaper-1.0.0-r1_aarch64_cortex-a53.apk
+apk add --allow-untrusted luci-app-vshaper.apk
 ```
 
 

@@ -1,0 +1,8 @@
+/etc/config/vshaper
+/etc/init.d/vshaper
+/lib/apk/packages/luci-app-vshaper.list
+/usr/bin/vshaper
+/usr/share/luci/menu.d/luci-app-vshaper.json
+/usr/share/rpcd/acl.d/luci-app-vshaper.json
+/www/luci-static/resources/view/vshaper/monitor.js
+/www/luci-static/resources/view/vshaper/settings.js

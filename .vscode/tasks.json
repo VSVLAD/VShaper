@@ -1,0 +1,97 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "1. Build Binary",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "bash",
+                "-c",
+                "cd /mnt/d/X/FREE_BASIC/VShaper && ./build-bin.sh"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "2. Build APK (Local OpenWRT)",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "bash",
+                "-c",
+                "cd /mnt/d/X/FREE_BASIC/VShaper && ./build-apk.sh"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "3. Deploy to OpenWRT",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "bash",
+                "-c",
+                "cd /mnt/d/X/FREE_BASIC/VShaper && ./deploy.sh"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "4. Debug: Compile/Build/Deploy to OpenWRT",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "bash",
+                "-c",
+                "cd /mnt/d/X/FREE_BASIC/VShaper && ./build-bin.sh && ./build-apk.sh && ./deploy.sh"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "8: Build All Targets",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "bash",
+                "-c",
+                "cd /mnt/d/X/FREE_BASIC/VShaper && ./build-apk.sh all"
+            ],
+            "presentation": {
+                "clear": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "9: Open SSH Session",
+            "type": "shell",
+            "command": "wsl",
+            "args": [
+                "bash",
+                "-c",
+                "cd /mnt/d/X/FREE_BASIC/VShaper && ./run.sh"
+            ],
+            "presentation": {
+                "clear": true,
+                "echo": false,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

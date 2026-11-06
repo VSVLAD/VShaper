@@ -1,0 +1,15 @@
+{
+    "luci-app-vshaper": {
+        "description": "Grant access to VShaper configuration and network interfaces",
+        "read": {
+            "uci": [ "vshaper", "dhcp", "network" ],
+            "ubus": {
+                "network.interface": [ "dump" ],
+                "network.device": [ "status" ]
+            }
+        },
+        "write": {
+            "uci": [ "vshaper" ]
+        }
+    }
+}

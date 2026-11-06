@@ -1,0 +1,27 @@
+{
+    "admin/network/vshaper": {
+        "title": "Ограничение скорости",
+        "action": {
+            "type": "firstchild"
+        },
+        "depends": {
+            "acl": [ "luci-app-vshaper" ]
+        }
+    },
+    "admin/network/vshaper/settings": {
+        "title": "Настройки",
+        "order": 1,
+        "action": {
+            "type": "view",
+            "path": "vshaper/settings"
+        }
+    },
+    "admin/network/vshaper/monitor": {
+        "title": "Мониторинг",
+        "order": 2,
+        "action": {
+            "type": "view",
+            "path": "vshaper/monitor"
+        }
+    }
+}

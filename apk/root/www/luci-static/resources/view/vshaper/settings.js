@@ -2,7 +2,6 @@
 'require view';
 'require form';
 'require rpc';
-'require ui';
 'require tools.widgets as widgets';
 
 var callHostHints = rpc.declare({
@@ -90,7 +89,6 @@ return view.extend({
                 var existingIp = m.uci.get('vshaper', sId, 'ip');
                 if (existingIp && existingIp === value) {
                     var errMsg = _('Клиент с IP-адресом ' + value + ' уже добавлен в список ограничений');
-                    ui.addNotification(null, E('p', {}, errMsg), 'error');
                     return errMsg;
                 }
             }
